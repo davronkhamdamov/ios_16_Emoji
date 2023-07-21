@@ -9,7 +9,6 @@
 </head>
 
 <body>
-    <input type="text" name="" id="input" placeholder="Please write emoji">
     <div class="wrap">
         <button class="btn">🫏</button>
         <button class="btn">🪓</button>
@@ -21,21 +20,49 @@
         <button class="btn">🐦‍⬛️</button>
         <button class="btn">🫡</button>
         <button class="btn">🫥</button>
+        <button class="btn">😂</button>
+        <button class="btn">🤏</button>
+        <button class="btn">🫳</button>
+    </div>
+    <div class="inputWrap">
+        <input type="text" name="" id="input" placeholder="Please write emoji">
+        <button class="emoji">
+            <div class="firstEmoji">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path
+                        d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm177.6 62.1C192.8 334.5 218.8 352 256 352s63.2-17.5 78.4-33.9c9-9.7 24.2-10.4 33.9-1.4s10.4 24.2 1.4 33.9c-22 23.8-60 49.4-113.6 49.4s-91.7-25.5-113.6-49.4c-9-9.7-8.4-24.9 1.4-33.9s24.9-8.4 33.9 1.4zM144.4 208a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm192-32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
+                </svg>
+            </div>
+            <div class="secondEmoji">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path
+                        d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm130.7 57.9c-4.2-13.6 7.1-25.9 21.3-25.9H364.5c14.2 0 25.5 12.4 21.3 25.9C369 368.4 318.2 408 258.2 408s-110.8-39.6-127.5-94.1zM144.4 192a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm192-32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
+                </svg>
+            </div>
+        </button>
     </div>
     <br>
-    <p id="text"></p>
     <script>
         const text = document.getElementById("text")
         const input = document.getElementById("input")
-        const buttons = document.querySelectorAll("button")
+        const buttons = document.querySelectorAll(".btn")
+        const emoji = document.querySelector(".emoji")
         input.addEventListener("input", (e) => {
             text.textContent = e.target.value
         })
         buttons.forEach(e => {
             e.addEventListener("click", (e) => {
-                text.textContent += e.target.textContent
                 input.value += e.target.textContent
+                input.focus()
             })
+        })
+        emoji.addEventListener("click", (e) => {
+            emoji.classList.toggle("active")
+            document.querySelector(".wrap").classList.toggle("active")
+            document.querySelector(".firstEmoji").classList.toggle("active")
+            document.querySelector(".secondEmoji").classList.toggle("active")
+            input.focus()
+
         })
     </script>
 </body>

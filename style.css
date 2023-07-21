@@ -4,13 +4,16 @@
 }
 body {
   width: 100%;
-  min-height: 100dvh;
+  max-width: 1200px;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
   flex-direction: column;
   box-sizing: border-box;
+  margin: 0 auto;
+  position: relative;
 }
 #text {
   font-size: 20px;
@@ -38,14 +41,48 @@ input {
   border: 1px solid black;
   font-family: "Emoji", sans-serif;
   font-size: 25px;
+  transition: 0.2s;
 }
 .wrap {
-  width: 400px;
+  width: 0;
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 10px;
   flex-wrap: wrap;
   background: #eee;
   border-radius: 10px;
-  padding: 20px;
+  height: 0;
+  overflow: hidden;
+  transition: 0.3s ease-in;
+}
+.wrap.active {
+  width: 400px;
+  padding: 20px 0;
+  height: 110px;
+  transition: 0.3s ease-in;
+}
+
+.emoji {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 1%;
+  top: 55%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  overflow: none;
+  cursor: pointer;
+}
+.inputWrap {
+  position: relative;
+}
+.firstEmoji.active {
+  display: none;
+}
+.secondEmoji.active {
+  display: block;
+}
+.secondEmoji {
+  display: none;
 }
