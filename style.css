@@ -1,0 +1,51 @@
+@font-face {
+  font-family: "Emoji";
+  src: url("./iOS16_u14_unofficial.ttf");
+}
+body {
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+#text {
+  font-size: 20px;
+  font-family: "Emoji", sans-serif;
+}
+.btn {
+  font-family: "Emoji";
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 30%;
+  outline: none;
+  border: none;
+  font-size: 25px;
+  user-select: none;
+}
+.btn:hover {
+  background: rgba(0, 0, 0, 0.09);
+}
+input {
+  width: 400px;
+  height: 50px;
+  padding: 0 10px;
+  border-radius: 10px;
+  border: 1px solid black;
+  font-family: "Emoji", sans-serif;
+  font-size: 25px;
+}
+.wrap {
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  background: #eee;
+  border-radius: 10px;
+  padding: 20px;
+}
